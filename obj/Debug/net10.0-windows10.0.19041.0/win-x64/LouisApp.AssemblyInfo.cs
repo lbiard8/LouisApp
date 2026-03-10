@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LouisApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+82f1bbf63ee323658343e8e362c533ab7cf911cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+188cfaa4879c4543a1f59e1363951e5f5bac141d")]
 [assembly: System.Reflection.AssemblyProductAttribute("LouisApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LouisApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

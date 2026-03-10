@@ -32813,11 +32813,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\louis\\OneDrive\\Documents\\Travaille\\BUT-Info-2ème_année\\2ème semestre\\Développement pour applications mobiles\\LouisApp\\LouisApp.csproj",
+      "projectUniqueName": "C:\\Travaile\\LouisApp\\LouisApp.csproj",
       "projectName": "LouisApp",
-      "projectPath": "C:\\Users\\louis\\OneDrive\\Documents\\Travaille\\BUT-Info-2ème_année\\2ème semestre\\Développement pour applications mobiles\\LouisApp\\LouisApp.csproj",
+      "projectPath": "C:\\Travaile\\LouisApp\\LouisApp.csproj",
       "packagesPath": "C:\\Users\\louis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\louis\\OneDrive\\Documents\\Travaille\\BUT-Info-2ème_année\\2ème semestre\\Développement pour applications mobiles\\LouisApp\\obj\\",
+      "outputPath": "C:\\Travaile\\LouisApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
