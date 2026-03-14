@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.sln.docstates
+
+# .NET
+[Dd]ebug/
+[Rr]elease/
+
+# OS
+.DS_Store
+Thumbs.db

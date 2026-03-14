@@ -1,0 +1,22 @@
+<Shell
+    x:Class="LouisApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LouisApp.Pages" 
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar Shell.TabBarTitleColor="#D4AF37" Shell.TabBarUnselectedColor="Gray">
+        <Tab Title="Accueil" Icon="meat.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+        <Tab Title="Bestiaire" Icon="wing.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MonstersPage}" />
+        </Tab>
+        <Tab Title="Ajouter" Icon="minerai.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AddMonsterPage}" />
+        </Tab>
+        <Tab Title="Faiblesses" Icon="plate.png">
+            <ShellContent ContentTemplate="{DataTemplate local:WeaknessPage}" />
+        </Tab>
+    </TabBar>
+</Shell>
