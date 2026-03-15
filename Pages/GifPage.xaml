@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LouisApp.Pages.GifPage"
+             BackgroundColor="Black"
+             Shell.PresentationMode="ModalAnimated"
+             Shell.TabBarIsVisible="False">
+
+    <VerticalStackLayout VerticalOptions="Center" Spacing="30" Padding="20">
+
+        <Label Text="MIAOU..." 
+               TextColor="#D4AF37" 
+               HorizontalOptions="Center" 
+               FontSize="20"
+               FontAttributes="Bold" />
+
+        <Image Source="cooking.gif" 
+               IsAnimationPlaying="True" 
+               HeightRequest="300" />
+
+        <Button Text="RENTRER À LA BASE" 
+                Clicked="OnBackClicked" 
+                BackgroundColor="#D4AF37" 
+                TextColor="Black" 
+                CornerRadius="25"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>

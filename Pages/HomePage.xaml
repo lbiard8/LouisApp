@@ -2,8 +2,88 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LouisApp.Pages.HomePage"
-             Title="Accueil">
-    <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Bienvenue Chasseur !" HorizontalOptions="Center" FontSize="20"/>
-    </VerticalStackLayout>
+             BackgroundColor="#121212">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="20">
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="BASE" 
+                       TextColor="#D4AF37" 
+                       FontSize="32" 
+                       FontAttributes="Bold" 
+                       HorizontalTextAlignment="Center" />
+                <Label Text="Bienvenu chasseur" 
+                       TextColor="Gray" 
+                       FontSize="16" 
+                       HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Padding="10">
+                <Border Grid.Column="0" 
+                    Stroke="#D4AF37" 
+                    StrokeThickness="2" 
+                    HeightRequest="150">    
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <Image Source="astera.webp" Aspect="AspectFill" />
+                </Border>
+
+                <Border Grid.Column="1" 
+                    Stroke="#D4AF37" 
+                    StrokeThickness="2" 
+                    HeightRequest="150">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <Image Source="seliana.webp" Aspect="AspectFill" />
+                </Border>
+            </Grid>
+
+            <Label Text="Zones de chasse" TextColor="#D4AF37" FontAttributes="Bold" Margin="0,10,0,0" />
+            <CarouselView HeightRequest="250" IndicatorView="indicatorView">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>foret.webp</x:String>
+                        <x:String>desert.jpg</x:String>
+                        <x:String>corail.webp</x:String>
+                        <x:String>val.webp</x:String>
+                        <x:String>anciens.webp</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="10" Stroke="#D4AF37" StrokeThickness="2">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="15" />
+                            </Border.StrokeShape>
+
+                            <Grid>
+                                <Image Source="{Binding}" 
+                           Aspect="AspectFill" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <IndicatorView x:Name="indicatorView"
+               IndicatorColor="Gray"
+               SelectedIndicatorColor="#D4AF37"
+               HorizontalOptions="Center"
+               Margin="0,-10,0,0" />
+
+            <Button Text="PRENDRE UN REPAS"
+                    Clicked="OnGifButtonClicked"
+                    BackgroundColor="#D4AF37"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="60"
+                    Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
