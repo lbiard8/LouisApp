@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:LouisApp.ViewModels"
+             xmlns:models="clr-namespace:LouisApp.Models"
              x:Class="LouisApp.Pages.MonstersPage"
-             Title="Accueil">
-    <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Bienvenue Chasseur !" HorizontalOptions="Center" FontSize="20"/>
-    </VerticalStackLayout>
+             Title="Bestiaire"
+             BackgroundColor="#121212">
+
+    <ContentPage.BindingContext>
+        <vm:MonstersViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="*">
+        <CollectionView ItemsSource="{Binding Monsters}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnMonsterSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Monster">
+                    <Frame BackgroundColor="#1E1E1E" BorderColor="#D4AF37" Margin="10" Padding="10">
+                        <HorizontalStackLayout Spacing="20">
+                            <Image Source="{Binding ImageUrl}" 
+                                   WidthRequest="70" 
+                                   HeightRequest="70" 
+                                   Aspect="AspectFit" />
+
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" TextColor="#D4AF37" />
+                                <Label Text="{Binding Type}" FontSize="14" TextColor="Gray" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>
