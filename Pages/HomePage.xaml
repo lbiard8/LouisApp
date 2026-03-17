@@ -46,7 +46,7 @@
                 <CarouselView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>foret.webp</x:String>
-                        <x:String>desert.jpg</x:String>
+                        <x:String>desert.webp</x:String>
                         <x:String>corail.webp</x:String>
                         <x:String>val.webp</x:String>
                         <x:String>anciens.webp</x:String>

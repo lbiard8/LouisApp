@@ -10,14 +10,18 @@
     <ContentPage.BindingContext>
         <vm:MonstersViewModel />
     </ContentPage.BindingContext>
-
     <Grid RowDefinitions="*">
         <CollectionView ItemsSource="{Binding Monsters}"
                         SelectionMode="Single"
                         SelectionChanged="OnMonsterSelected">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Monster">
-                    <Frame BackgroundColor="#1E1E1E" BorderColor="#D4AF37" Margin="10" Padding="10">
+                <DataTemplate x:DataType="vm:MonsterItemViewModel">
+                    <Frame BackgroundColor="#1E1E1E" 
+                           BorderColor="#D4AF37" 
+                           Margin="10" 
+                           Padding="10"
+                           InputTransparent="True">
+
                         <HorizontalStackLayout Spacing="20">
                             <Image Source="{Binding ImageUrl}" 
                                    WidthRequest="70" 
@@ -25,8 +29,14 @@
                                    Aspect="AspectFit" />
 
                             <VerticalStackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" TextColor="#D4AF37" />
-                                <Label Text="{Binding Type}" FontSize="14" TextColor="Gray" />
+                                <Label Text="{Binding Monster.Name}" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#D4AF37" />
+
+                                <Label Text="{Binding Monster.Type}" 
+                                       FontSize="14" 
+                                       TextColor="Gray" />
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
                     </Frame>

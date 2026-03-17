@@ -16,5 +16,10 @@ public partial class MonstersPage : ContentPage
     }
     private async void OnMonsterSelected(object sender, SelectionChangedEventArgs e)
     {
+        if (e.CurrentSelection.FirstOrDefault() is ViewModels.MonsterItemViewModel selectedVM)
+        {
+            await Navigation.PushAsync(new MonsterDetailPage(selectedVM.Monster));
+            ((CollectionView)sender).SelectedItem = null;
+        }
     }
 }

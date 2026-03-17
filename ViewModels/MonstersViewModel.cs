@@ -7,7 +7,7 @@ namespace LouisApp.ViewModels;
 public class MonstersViewModel
 {
     private readonly MonsterService _service = new MonsterService();
-    public ObservableCollection<Monster> Monsters { get; set; } = new();
+    public ObservableCollection<MonsterItemViewModel> Monsters { get; set; } = new();
 
     public async Task LoadMonstersAsync()
     {
@@ -16,7 +16,7 @@ public class MonstersViewModel
         Monsters.Clear();
         foreach (var monster in monstersFromApi)
         {
-            Monsters.Add(monster);
+            Monsters.Add(new MonsterItemViewModel(monster));
         }
     }
 }

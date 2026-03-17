@@ -80,6 +80,9 @@
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\MonsterDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\MonstersPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
