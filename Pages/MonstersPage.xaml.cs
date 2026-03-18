@@ -2,9 +2,10 @@
 
 public partial class MonstersPage : ContentPage
 {
-    public MonstersPage()
+    public MonstersPage(ViewModels.MonstersViewModel vm)
     {
         InitializeComponent();
+        BindingContext = vm;
     }
     protected override async void OnAppearing()
     {

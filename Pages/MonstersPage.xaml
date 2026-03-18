@@ -23,7 +23,7 @@
                            InputTransparent="True">
 
                         <HorizontalStackLayout Spacing="20">
-                            <Image Source="{Binding ImageUrl}" 
+                            <Image Source="{Binding MonsterImage}" 
                                    WidthRequest="70" 
                                    HeightRequest="70" 
                                    Aspect="AspectFit" />

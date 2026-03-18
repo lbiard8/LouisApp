@@ -13,10 +13,10 @@
         <Tab Title="Accueil" Icon="meat.png">
             <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
         </Tab>
-        <Tab Title="Bestiaire" Icon="wing.png">
+        <Tab Title="Bestiaire" Route="MonstersPage" Icon="wing.png">
             <ShellContent ContentTemplate="{DataTemplate local:MonstersPage}" />
         </Tab>
-        <Tab Title="Ajouter" Icon="minerai.png">
+        <Tab Title="Ajouter" Route="AddMonsterPage" Icon="minerai.png">
             <ShellContent ContentTemplate="{DataTemplate local:AddMonsterPage}" />
         </Tab>
         <Tab Title="Faiblesses" Icon="plate.png">

@@ -10,10 +10,15 @@ public class MonsterItemViewModel
         Monster = monster;
     }
 
-    public string ImageUrl
+    public ImageSource MonsterImage
     {
         get
         {
+            if (!string.IsNullOrEmpty(Monster.CustomImagePath))
+            {
+                return ImageSource.FromFile(Monster.CustomImagePath);
+            }
+
             string formattedName = Monster.Name.Replace(" ", "_");
 
             if (Monster.Name.Contains("Safi'jiiva"))

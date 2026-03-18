@@ -16,7 +16,7 @@
                    TextColor="#D4AF37" 
                    HorizontalOptions="Center" />
 
-            <Image Source="{Binding ImageUrl}" 
+            <Image Source="{Binding MonsterImage}" 
                    WidthRequest="200" 
                    HeightRequest="200" 
                    Aspect="AspectFit" 

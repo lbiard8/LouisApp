@@ -17,7 +17,11 @@ namespace LouisApp
 
 #if DEBUG
     		builder.Logging.AddDebug();
+
 #endif
+            builder.Services.AddSingleton<ViewModels.MonstersViewModel>();
+            builder.Services.AddTransient<Pages.MonstersPage>();
+            builder.Services.AddTransient<Pages.AddMonsterPage>();
 
             return builder.Build();
         }
