@@ -1,9 +1,96 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:LouisApp.Models"
              x:Class="LouisApp.Pages.WeaknessPage"
-             Title="Accueil">
-    <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Bienvenue Chasseur !" HorizontalOptions="Center" FontSize="20"/>
-    </VerticalStackLayout>
+             Title="Points Faibles"
+             BackgroundColor="#121212">
+
+    <Grid RowDefinitions="Auto, Auto, *" Padding="10">
+
+        <Frame Grid.Row="0" BackgroundColor="#1E1E1E" BorderColor="#D4AF37" Margin="10,5" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Calculateur de dégats" TextColor="#D4AF37" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <FlexLayout JustifyContent="Center" AlignItems="Center" Wrap="Wrap">
+                    <VerticalStackLayout Margin="5">
+                        <Label Text="Dégâts" TextColor="Gray" FontSize="10" HorizontalOptions="Center"/>
+                        <Entry Text="{Binding WeaponDamage, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="80" TextColor="White" HorizontalTextAlignment="Center" BackgroundColor="#2A2A2A"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Margin="5">
+                        <Label Text="Élément Arme" TextColor="Gray" FontSize="10" HorizontalOptions="Center"/>
+                        <Picker x:Name="ElementPicker" 
+                        Title="Élément"
+                        TitleColor="Gray"
+                        TextColor="White"
+                        WidthRequest="120"
+                        BackgroundColor="#2A2A2A"
+                        SelectedIndex="0"
+                        SelectedItem="{Binding SelectedElement}"
+                        SelectedIndexChanged="OnElementChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Fire</x:String>
+                                    <x:String>Water</x:String>
+                                    <x:String>Thunder</x:String>
+                                    <x:String>Ice</x:String>
+                                    <x:String>Dragon</x:String>
+                                    <x:String>Physique</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </VerticalStackLayout>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <SearchBar Grid.Row="1" Placeholder="Chercher un monstre..." TextChanged="OnSearchTextChanged" Margin="10,0" />
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding FilteredMonsters}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:MonsterWeakness">
+                    <Frame BackgroundColor="#1E1E1E" 
+                           BorderColor="#D4AF37" 
+                           Margin="10" 
+                           Padding="10">
+
+                        <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="15">
+
+                            <Image Source="{Binding MonsterImage}" 
+                                   WidthRequest="60" 
+                                   HeightRequest="60" 
+                                   Aspect="AspectFit"
+                                   VerticalOptions="Center"/>
+
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                                <Label Text="{Binding Name}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#D4AF37" />
+
+                                <Label Text="{Binding FinalDamage, StringFormat='Potentiel : {0:F0} DMG'}" 
+                                       FontSize="13" 
+                                       TextColor="LightGreen" />
+                            </VerticalStackLayout>
+
+                            <Frame Grid.Column="2" 
+                                   BackgroundColor="{Binding ElementColor}" 
+                                   Padding="10,5" 
+                                   CornerRadius="8"
+                                   VerticalOptions="Center"
+                                   HasShadow="False"
+                                   BorderColor="Transparent">
+                                <Label Text="{Binding WeakElement}" 
+                                       TextColor="White" 
+                                       FontSize="12" 
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

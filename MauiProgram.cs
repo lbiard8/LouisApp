@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 
 namespace LouisApp
 {
@@ -19,6 +20,7 @@ namespace LouisApp
     		builder.Logging.AddDebug();
 
 #endif
+            builder.Services.AddSingleton(AudioManager.Current);
             builder.Services.AddSingleton<ViewModels.MonstersViewModel>();
             builder.Services.AddTransient<Pages.MonstersPage>();
             builder.Services.AddTransient<Pages.AddMonsterPage>();
